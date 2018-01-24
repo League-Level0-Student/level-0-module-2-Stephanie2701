@@ -1,10 +1,13 @@
 package extra;
 
+import javax.swing.JOptionPane;
+
 import org.jointheleague.graphical.robot.Robot;
 
 /*** Teacher's note ***/
 /* Before beginning recipe: 
 * 1. ask students to find and explain the method in this recipe. 
+  
 * 2. ask students how they might use the method to make the picture in the laminated hand-outs. */
 
 public class StarShow {
@@ -46,14 +49,21 @@ public class StarShow {
 
 	private void drawStar(int starSize) {
 		// 2. Put the robot's pen down
-
+		robot.penDown();
 		// 4. Repeat both commands 5 times. See Figure 1 at http://bit.ly/star-show
-
+for (int i = 0; i < 5; i++) {
+	robot.move(starSize);
+	robot.turn(144);
+	
+}
 			// 1. Move the robot the distance of the starSize variable
+		robot.move(starSize);
 	
 			// 3. Turn the robot 144 degrees
-			
+	robot.turn(144);
+		
 	}
+	
 	
 	public static void main(String[] args) {
 		new StarShow().makeStars();
